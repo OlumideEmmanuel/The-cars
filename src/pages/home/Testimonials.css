@@ -1,0 +1,126 @@
+/* src/pages/home/Testimonials.css */
+.testimonials-section {
+  padding: 5rem 1.5rem;
+  background: var(--bg-white);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.testimonial-card {
+  background: var(--bg-light);
+  border-radius: var(--radius-md);
+  padding: 1.8rem;
+  border: 1.5px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.testimonial-card--active {
+  border-color: var(--primary);
+  background: var(--bg-white);
+  box-shadow: var(--shadow-md);
+}
+
+.t-stars {
+  display: flex;
+  gap: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.t-stars i {
+  color: #f6c90e;
+  font-size: 0.9rem;
+}
+
+.t-text {
+  font-size: 0.92rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+  font-style: italic;
+}
+
+.t-author {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.t-avatar {
+  width: 42px;
+  height: 42px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.t-author strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+.t-author span {
+  font-size: 0.8rem;
+  color: var(--text-mid);
+}
+
+/* Navigation */
+.t-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.t-nav-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid var(--primary);
+  background: transparent;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.t-nav-btn:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.t-dots {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.t-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ddd;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.t-dot--active {
+  background: var(--primary);
+  width: 24px;
+  border-radius: 4px;
+}

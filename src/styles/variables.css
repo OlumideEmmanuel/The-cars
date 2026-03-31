@@ -1,0 +1,28 @@
+/* src/styles/variables.css */
+:root {
+  /* Brand Colors */
+  --primary: #007BFF;
+  --primary-dark: #0056b3;
+  --primary-light: #e7f1ff;
+
+  /* Text */
+  --text-dark: #222;
+  --text-mid: #555;
+  --text-light: #999;
+
+  /* Backgrounds */
+  --bg-light: #f9f9f9;
+  --bg-white: #ffffff;
+  --bg-dark: #0d0d0d;
+
+  /* Borders & Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.2);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* Spacing */
+  --max-width: 1200px;
+}

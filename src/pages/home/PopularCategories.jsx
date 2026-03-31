@@ -3,7 +3,7 @@ import './PopularCategories.css';
 import { FaCarSide, FaBolt, FaTruckPickup } from 'react-icons/fa';
 import { GiJeep } from 'react-icons/gi';
 import { MdOutlineSportsMotorsports } from 'react-icons/md';
-import { carsData } from '../data/carsData';
+import { carsData } from '../../data/carsData';
 
 const categories = [
   { id: 1, name: 'SUVs', icon: <GiJeep size={40} />, count: 12 },

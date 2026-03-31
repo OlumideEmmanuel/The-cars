@@ -1,5 +1,5 @@
-.under-construction {
-  height: 100vh;
+.uc-wrapper {
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,10 +12,15 @@
 .uc-content {
   max-width: 600px;
   background: rgba(255, 255, 255, 0.05);
-  padding: 2rem;
-  border-radius: 16px;
+  padding: 3rem 2rem;
+  border-radius: var(--radius-lg);
   backdrop-filter: blur(8px);
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-lg);
+}
+
+.uc-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
 }
 
 .uc-content h1 {
@@ -25,21 +30,20 @@
 
 .uc-content p {
   font-size: 1.1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   color: #ccc;
 }
 
 .uc-content button {
-  background: #007BFF;
+  background: var(--primary);
   color: #fff;
   border: none;
-  padding: 0.7rem 1.5rem;
+  padding: 0.8rem 2rem;
   font-size: 1rem;
-  cursor: pointer;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   transition: background 0.3s ease;
 }
 
 .uc-content button:hover {
-  background: #ff0000;
+  background: var(--primary-dark);
 }

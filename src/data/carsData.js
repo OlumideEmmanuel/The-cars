@@ -37,6 +37,7 @@ import KoenigseggJeskoAbsolut from "../assets/KoenigseggJeskoAbsolut.jpg";
 import PaganiUtopia from "../assets/PaganiUtopia.jpg";
 import FerrariSF90Stradale from "../assets/FerrariSF90Stradale.jpg";
 import XDiavelV4 from "../assets/XDiavelV4.png";
+import JeepRecon from "../assets/JeepRecon.jpg";
 
 
 
@@ -486,6 +487,17 @@ export const carsData = [
     fuel: "Petrol",
     category: "Sports",
     description: "A high-performance cruiser combining Ducati’s signature V4 engine with elegant design and advanced technology."
+  },
+  {
+    id: 40,
+    name: "Jeep Recon",
+    price: "$55,000",
+    image: JeepRecon,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Electric",
+    category: "SUVs",
+    description: "An all-electric off-roader with rugged styling and advanced 4x4 capability, built for adventure."
   },
 
 ];
