@@ -1,18 +1,48 @@
 /* src/components/layout/Navbar.css */
 
+/* Base navbar */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: Transparent;
   transition: background 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
   padding: 0.5rem 0;
 }
 
-/* Glassmorphic style when scrolled */
-.navbar--scrolled {
+/* ========== LANDING PAGE ========== */
+.navbar--landing {
+  background: transparent;
+}
+
+.navbar--landing .nav-links a {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar--landing .nav-logo .logo-the {
+  color: #fff;
+}
+
+.navbar--landing .nav-logo .logo-cars {
+  color: var(--primary);
+}
+
+.navbar--landing .btn-login {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.navbar--landing .btn-login:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.navbar--landing .hamburger {
+  color: #fff;
+}
+
+/* Glassmorphic style when scrolled on landing page */
+.navbar--landing.navbar--scrolled {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -20,35 +50,78 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* For browsers that don't support backdrop-filter, fallback to solid white */
+/* For browsers without backdrop-filter, fallback to solid white */
 @supports not (backdrop-filter: blur(12px)) {
-  .navbar--scrolled {
+  .navbar--landing.navbar--scrolled {
     background: rgba(255, 255, 255, 0.98);
   }
 }
 
-/* Text colors when scrolled */
-.navbar--scrolled .nav-links a {
+/* When scrolled on landing page, darken text */
+.navbar--landing.navbar--scrolled .nav-links a {
   color: var(--text-dark);
 }
 
-.navbar--scrolled .nav-logo .logo-the {
+.navbar--landing.navbar--scrolled .nav-logo .logo-the {
   color: var(--text-dark);
 }
 
-.navbar--scrolled .nav-logo .logo-cars {
+.navbar--landing.navbar--scrolled .nav-logo .logo-cars {
   color: var(--primary);
 }
 
-.navbar--scrolled .btn-login {
+.navbar--landing.navbar--scrolled .btn-login {
   color: var(--primary);
   border-color: var(--primary);
 }
 
-.navbar--scrolled .btn-login:hover {
+.navbar--landing.navbar--scrolled .btn-login:hover {
   background: var(--primary-light);
 }
 
+.navbar--landing.navbar--scrolled .hamburger {
+  color: var(--text-dark);
+}
+
+/* ========== INTERNAL PAGES ========== */
+/* Glass badge style, always visible, no scroll change */
+.navbar--internal {
+  background: rgba(0, 123, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 123, 255, 0.5);
+  box-shadow: none;
+}
+
+.navbar--internal .nav-links a {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar--internal .nav-logo .logo-the {
+  color: #fff;
+}
+
+.navbar--internal .nav-logo .logo-cars {
+  color: var(--primary);
+}
+
+.navbar--internal .btn-login {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.navbar--internal .btn-login:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.navbar--internal .hamburger {
+  color: #fff;
+}
+
+/* Optional: when scrolled on internal pages, maybe make slightly more opaque? We'll keep it simple: no change */
+/* .navbar--internal.navbar--scrolled {} */ /* not needed because we never add navbar--scrolled to internal pages */
+
+/* ========== COMMON STYLES (unchanged) ========== */
 .nav-container {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -59,7 +132,6 @@
   gap: 2rem;
 }
 
-/* Logo */
 .nav-logo {
   display: flex;
   align-items: center;
@@ -72,7 +144,6 @@
 }
 
 .logo-the {
-  color: #fff;
   transition: color 0.4s ease;
 }
 
@@ -80,7 +151,6 @@
   color: var(--primary);
 }
 
-/* Nav Links */
 .nav-links {
   display: flex;
   align-items: center;
@@ -91,7 +161,6 @@
 
 .nav-links a {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.9);
   font-size: 0.92rem;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -123,7 +192,6 @@
   display: none;
 }
 
-/* Desktop Auth */
 .nav-auth {
   display: flex;
   align-items: center;
@@ -133,9 +201,8 @@
 
 .btn-login {
   padding: 0.45rem 1.2rem;
-  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  border: 1.5px solid;
   border-radius: var(--radius-sm);
-  color: #fff;
   font-size: 0.9rem;
   font-weight: 500;
   text-decoration: none;
@@ -143,7 +210,7 @@
 }
 
 .btn-login:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(0,0,0,0.05);
 }
 
 .btn-signup {
@@ -164,23 +231,17 @@
   transform: translateY(-1px);
 }
 
-/* Hamburger */
 .hamburger {
   display: none;
   background: none;
   border: none;
-  color: #fff;
   font-size: 1.8rem;
   cursor: pointer;
   padding: 0.2rem;
   transition: color 0.3s ease;
 }
 
-.navbar--scrolled .hamburger {
-  color: var(--text-dark);
-}
-
-/* Mobile */
+/* Mobile styles (unchanged) */
 @media (max-width: 768px) {
   .nav-links {
     position: fixed;

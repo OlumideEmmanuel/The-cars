@@ -1,4 +1,3 @@
-/* src/pages/auth/LoginPage.css */
 
 .login-wrapper {
   min-height: 100vh;
@@ -19,7 +18,6 @@
   overflow: hidden;
 }
 
-/* Left branding panel (same as signup) */
 .login-left {
   background: linear-gradient(135deg, #007BFF, #0041a8);
   color: #fff;
@@ -84,7 +82,6 @@
   text-decoration: underline;
 }
 
-/* Form group (reused from signup) */
 .form-group {
   display: flex;
   flex-direction: column;

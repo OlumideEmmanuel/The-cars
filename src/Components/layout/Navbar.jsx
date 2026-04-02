@@ -1,11 +1,14 @@
 // src/components/layout/Navbar.jsx
 import React, { useState, useEffect } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
+  const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const isLanding = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -15,10 +18,19 @@ const Navbar = () => {
 
   const closeMenu = () => setMenuOpen(false);
 
-  return (
-    <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
-      <div className="nav-container">
+  // Determine navbar class:
+  // - always add 'navbar'
+  // - if landing page, add 'navbar--landing' and maybe 'navbar--scrolled' based on scroll
+  // - if internal page, add 'navbar--internal' (scroll doesn't affect its glassy look)
+  const navbarClass = `
+    navbar
+    ${isLanding ? 'navbar--landing' : 'navbar--internal'}
+    ${isLanding && scrolled ? 'navbar--scrolled' : ''}
+  `.trim();
 
+  return (
+    <header className={navbarClass}>
+      <div className="nav-container">
         {/* Logo */}
         <Link to="/" className="nav-logo" onClick={closeMenu}>
           <span className="logo-the">THE</span>
@@ -53,7 +65,6 @@ const Navbar = () => {
         >
           <i className={`bi ${menuOpen ? 'bi-x-lg' : 'bi-list'}`}></i>
         </button>
-
       </div>
     </header>
   );

@@ -1,4 +1,3 @@
-// src/pages/auth/LoginPage.jsx
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './LoginPage.css';
@@ -11,6 +10,10 @@ const LoginPage = () => {
     rememberMe: false,
   });
   const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [modal, setModal] = useState({ show: false, title: '', message: '', type: '' });
+
+  const closeModal = () => setModal({ show: false, title: '', message: '', type: '' });
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -22,12 +25,8 @@ const LoginPage = () => {
 
   const validate = () => {
     const newErrors = {};
-    if (!formData.emailOrPhone.trim()) {
-      newErrors.emailOrPhone = 'Email or phone number is required';
-    }
-    if (!formData.password.trim()) {
-      newErrors.password = 'Password is required';
-    }
+    if (!formData.emailOrPhone.trim()) newErrors.emailOrPhone = 'Email is required';
+    if (!formData.password.trim()) newErrors.password = 'Password is required';
     return newErrors;
   };
 
@@ -38,16 +37,36 @@ const LoginPage = () => {
       setErrors(newErrors);
       return;
     }
-    // Placeholder – replace with actual auth later
-    alert('Login successful! (Auth coming soon)');
-    navigate('/');
+
+    setLoading(true);
+
+    // Get users from localStorage
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    const user = users.find(u => u.email === formData.emailOrPhone && u.password === formData.password);
+
+    if (!user) {
+      setModal({
+        show: true,
+        title: 'Login Failed',
+        message: 'Invalid email or password. Please try again.',
+        type: 'error',
+      });
+      setLoading(false);
+      return;
+    }
+
+    const { password, ...userWithoutPassword } = user;
+    localStorage.setItem('currentUser', JSON.stringify(userWithoutPassword));
+
+    setLoading(false);
+    // Redirect to dashboard overview
+    navigate('/dashboard/overview');
   };
 
   return (
     <div className="login-wrapper">
       <div className="login-card">
-
-        {/* Left side – branding (same as signup) */}
+        {/* Left side – branding */}
         <div className="login-left">
           <h1>The Cars</h1>
           <p>Your trusted car marketplace. Buy, sell, and discover your next ride.</p>
@@ -67,13 +86,12 @@ const LoginPage = () => {
           </p>
 
           <form onSubmit={handleSubmit} noValidate>
-
             <div className="form-group">
-              <label>Email or Phone Number</label>
+              <label>Email Address</label>
               <input
-                type="text"
+                type="email"
                 name="emailOrPhone"
-                placeholder="john@email.com or +234 800 000 0000"
+                placeholder="john@email.com"
                 value={formData.emailOrPhone}
                 onChange={handleChange}
               />
@@ -107,13 +125,31 @@ const LoginPage = () => {
               </Link>
             </div>
 
-            <button type="submit" className="login-submit-btn">
-              Log In
+            <button type="submit" className="login-submit-btn" disabled={loading}>
+              {loading ? 'Logging in...' : 'Log In'}
             </button>
-
           </form>
         </div>
       </div>
+
+      {/* Modal */}
+      {modal.show && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className={`modal-box ${modal.type === 'error' ? 'modal-error' : 'modal-success'}`} onClick={e => e.stopPropagation()}>
+            <button className="modal-close" onClick={closeModal}>
+              <i className="bi bi-x-lg"></i>
+            </button>
+            <div className="modal-icon">
+              <i className={`bi ${modal.type === 'error' ? 'bi-x-circle-fill' : 'bi-check-circle-fill'}`}></i>
+            </div>
+            <h3>{modal.title}</h3>
+            <p>{modal.message}</p>
+            <button className="modal-btn-primary" onClick={closeModal}>
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

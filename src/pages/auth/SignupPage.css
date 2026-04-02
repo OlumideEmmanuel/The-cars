@@ -1,4 +1,3 @@
-/* src/pages/auth/SignupPage.css */
 .signup-wrapper {
   min-height: 100vh;
   display: flex;
@@ -196,4 +195,120 @@
   .form-row {
     grid-template-columns: 1fr;
   }
+}
+
+/* Password strength meter */
+.password-strength {
+  margin-top: 0.3rem;
+}
+
+.strength-bar {
+  height: 3px;
+  border-radius: 3px;
+  transition: width 0.3s ease, background-color 0.3s ease;
+  margin-bottom: 0.3rem;
+}
+
+.strength-text {
+  font-size: 0.7rem;
+  color: var(--text-mid);
+}
+
+/* Modal overlay (reuse from FeaturedCars but adjust) */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 1rem;
+}
+
+.modal-box {
+  background: var(--bg-white);
+  border-radius: var(--radius-md);
+  width: 100%;
+  max-width: 380px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  position: relative;
+  animation: modalIn 0.3s ease;
+}
+
+.modal-success .modal-icon i {
+  color: #48bb78;
+  font-size: 3rem;
+}
+
+.modal-error .modal-icon i {
+  color: #e53e3e;
+  font-size: 3rem;
+}
+
+.modal-box h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem;
+  color: var(--text-dark);
+}
+
+.modal-box p {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  margin-bottom: 1.5rem;
+}
+
+.modal-btn-primary,
+.modal-btn-secondary {
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+}
+
+.modal-btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.modal-btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.modal-btn-secondary {
+  background: var(--bg-light);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.modal-btn-secondary:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+  color: var(--primary);
 }

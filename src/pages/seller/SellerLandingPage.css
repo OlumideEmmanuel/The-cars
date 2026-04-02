@@ -1,0 +1,471 @@
+/* src/pages/seller/SellerLandingPage.css */
+.seller-page {
+  padding-top: 70px;
+}
+
+/* Hero */
+.seller-hero {
+  background: linear-gradient(135deg, #001f5b 0%, #003580 50%, #0057b8 100%);
+  padding: 5rem 1.5rem;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.seller-hero-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+}
+
+.seller-hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.85);
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+  display: inline-flex;
+}
+
+.seller-hero-tag i {
+  color: #f6c90e;
+}
+
+.seller-hero-content h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.seller-hero-content p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 480px;
+}
+
+.seller-hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.seller-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.8rem;
+  background: #fff;
+  color: var(--primary);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.seller-cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.seller-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.8rem;
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.5);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.seller-cta-secondary:hover {
+  border-color: #fff;
+  background: rgba(255,255,255,0.1);
+}
+
+.seller-hero-stats {
+  display: flex;
+  gap: 2rem;
+}
+
+.seller-hero-stats div {
+  display: flex;
+  flex-direction: column;
+}
+
+.seller-hero-stats strong {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+
+.seller-hero-stats span {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 0.2rem;
+}
+
+/* Dashboard preview */
+.seller-dashboard-preview {
+  background: #fff;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.preview-header {
+  background: #f5f5f5;
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-bottom: 1px solid #eee;
+}
+
+.preview-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.preview-dot.red { background: #ff5f57; }
+.preview-dot.yellow { background: #ffbd2e; }
+.preview-dot.green { background: #28c840; }
+
+.preview-title {
+  margin-left: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-mid);
+}
+
+.preview-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-bottom: 1px solid #eee;
+}
+
+.preview-stat {
+  padding: 1rem 0.5rem;
+  text-align: center;
+  border-right: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.preview-stat:last-child {
+  border-right: none;
+}
+
+.preview-stat i {
+  font-size: 1.1rem;
+  color: var(--primary);
+}
+
+.preview-stat strong {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.preview-stat span {
+  font-size: 0.72rem;
+  color: var(--text-mid);
+}
+
+.preview-listing {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.preview-listing-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.7rem;
+  background: var(--bg-light);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  color: var(--text-mid);
+}
+
+.preview-listing-bar.active {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.preview-listing-bar i {
+  font-size: 1rem;
+}
+
+.preview-listing-bar.active i {
+  color: #16a34a;
+}
+
+.preview-listing-bar span {
+  flex: 1;
+}
+
+.preview-listing-bar strong {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* Sections */
+.seller-section {
+  padding: 5rem 1.5rem;
+  background: var(--bg-light);
+}
+
+.seller-section--dark {
+  background: #0a0f1e;
+}
+
+.seller-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* Steps */
+.seller-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.seller-step {
+  text-align: center;
+  position: relative;
+}
+
+.seller-step-num {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 5rem;
+  font-weight: 800;
+  color: rgba(0,123,255,0.05);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.seller-step-icon {
+  width: 64px;
+  height: 64px;
+  background: var(--primary-light);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.seller-step-icon i {
+  font-size: 1.8rem;
+  color: var(--primary);
+}
+
+.seller-step h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.seller-step p {
+  font-size: 0.85rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+}
+
+/* Perks */
+.perks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.perk-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.perk-card:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-3px);
+}
+
+.perk-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(0,123,255,0.2);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.perk-icon i {
+  font-size: 1.3rem;
+  color: #90c4ff;
+}
+
+.perk-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.perk-card p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+}
+
+/* FAQ */
+.faq-list {
+  max-width: 720px;
+  margin: 2.5rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.faq-item {
+  background: var(--bg-white);
+  border-radius: var(--radius-md);
+  border: 1.5px solid #eee;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.faq-item--open {
+  border-color: var(--primary);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  text-align: left;
+  gap: 1rem;
+}
+
+.faq-question i {
+  color: var(--primary);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.faq-answer {
+  padding: 0 1.5rem 1.2rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.faq-answer p {
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+  padding-top: 1rem;
+}
+
+/* Final CTA */
+.seller-final-cta {
+  background: linear-gradient(135deg, #007BFF, #0041a8);
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+.seller-final-cta h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.seller-final-cta p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .seller-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .seller-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .perks-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .seller-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .perks-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .seller-hero-stats {
+    gap: 1.2rem;
+  }
+}

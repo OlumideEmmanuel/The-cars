@@ -1,5 +1,4 @@
-// src/pages/auth/SignupPage.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './SignupPage.css';
 
@@ -15,6 +14,48 @@ const SignupPage = () => {
     agreeToTerms: false,
   });
   const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [passwordStrength, setPasswordStrength] = useState(0);
+  const [modal, setModal] = useState({ show: false, title: '', message: '', type: '' });
+
+  const closeModal = () => setModal({ show: false, title: '', message: '', type: '' });
+
+useEffect(() => {
+  const newErrors = {};
+
+  if (formData.email && !/\S+@\S+\.\S+/.test(formData.email)) {
+    newErrors.email = 'Enter a valid email address';
+  } else {
+    newErrors.email = '';
+  }
+
+  if (formData.password) {
+    let strength = 0;
+    if (formData.password.length >= 6) strength++;
+    if (/[A-Z]/.test(formData.password)) strength++;
+    if (/[0-9]/.test(formData.password)) strength++;
+    if (/[^A-Za-z0-9]/.test(formData.password)) strength++;
+    setPasswordStrength(Math.min(strength, 3));
+  } else {
+    setPasswordStrength(0);
+  }
+
+  if (formData.confirmPassword) {
+    if (formData.password !== formData.confirmPassword) {
+      newErrors.confirmPassword = 'Passwords do not match';
+    } else {
+      newErrors.confirmPassword = '';
+    }
+  }
+
+  setErrors(prev => {
+    const merged = { ...prev, ...newErrors };
+    Object.keys(merged).forEach(key => {
+      if (merged[key] === '') delete merged[key];
+    });
+    return merged;
+  });
+}, [formData.email, formData.password, formData.confirmPassword]);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -42,16 +83,52 @@ const SignupPage = () => {
       setErrors(newErrors);
       return;
     }
-    // For now just navigate home — real auth comes with Supabase later
-    alert('Account created successfully! (Auth coming soon)');
-    navigate('/');
+
+    setLoading(true);
+
+    const existingUsers = JSON.parse(localStorage.getItem('users') || '[]');
+    const emailExists = existingUsers.some(user => user.email === formData.email);
+
+    if (emailExists) {
+      setModal({
+        show: true,
+        title: 'Signup Failed',
+        message: 'This email is already registered. Please log in.',
+        type: 'error',
+      });
+      setLoading(false);
+      return;
+    }
+
+    const newUser = {
+      id: Date.now(),
+      fullName: formData.fullName,
+      email: formData.email,
+      phone: formData.phone,
+      password: formData.password, 
+      role: formData.role,
+      createdAt: new Date().toISOString(),
+    };
+
+    existingUsers.push(newUser);
+    localStorage.setItem('users', JSON.stringify(existingUsers));
+
+    setLoading(false);
+    setModal({
+      show: true,
+      title: 'Account Created!',
+      message: 'Your account has been created successfully. Please log in.',
+      type: 'success',
+    });
   };
+
+  const strengthText = ['Weak', 'Fair', 'Good', 'Strong'];
+  const strengthColors = ['#e53e3e', '#ed8936', '#ecc94b', '#48bb78'];
 
   return (
     <div className="signup-wrapper">
       <div className="signup-card">
 
-        {/* Left side — branding */}
         <div className="signup-left">
           <h1>The Cars</h1>
           <p>Your trusted car marketplace. Buy, sell, and discover your next ride.</p>
@@ -63,7 +140,6 @@ const SignupPage = () => {
           </ul>
         </div>
 
-        {/* Right side — form */}
         <div className="signup-right">
           <h2>Create your account</h2>
           <p className="signup-subtitle">
@@ -89,7 +165,6 @@ const SignupPage = () => {
           </div>
 
           <form onSubmit={handleSubmit} noValidate>
-
             <div className="form-group">
               <label>Full Name</label>
               <input
@@ -136,6 +211,20 @@ const SignupPage = () => {
                   value={formData.password}
                   onChange={handleChange}
                 />
+                {formData.password && (
+                  <div className="password-strength">
+                    <div
+                      className="strength-bar"
+                      style={{
+                        width: `${(passwordStrength + 1) * 25}%`,
+                        backgroundColor: strengthColors[passwordStrength],
+                      }}
+                    />
+                    <span className="strength-text">
+                      Strength: {strengthText[passwordStrength]}
+                    </span>
+                  </div>
+                )}
                 {errors.password && <span className="error">{errors.password}</span>}
               </div>
 
@@ -165,13 +254,38 @@ const SignupPage = () => {
               {errors.agreeToTerms && <span className="error">{errors.agreeToTerms}</span>}
             </div>
 
-            <button type="submit" className="signup-submit-btn">
-              Create Account
+            <button type="submit" className="signup-submit-btn" disabled={loading}>
+              {loading ? 'Creating account...' : 'Create Account'}
             </button>
-
           </form>
         </div>
       </div>
+
+      {/* Modal */}
+      {modal.show && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className={`modal-box ${modal.type === 'error' ? 'modal-error' : 'modal-success'}`} onClick={e => e.stopPropagation()}>
+            <button className="modal-close" onClick={closeModal}>
+              <i className="bi bi-x-lg"></i>
+            </button>
+            <div className="modal-icon">
+              <i className={`bi ${modal.type === 'error' ? 'bi-x-circle-fill' : 'bi-check-circle-fill'}`}></i>
+            </div>
+            <h3>{modal.title}</h3>
+            <p>{modal.message}</p>
+            {modal.type === 'success' && (
+              <button className="modal-btn-primary" onClick={() => navigate('/login')}>
+                Go to Login
+              </button>
+            )}
+            {modal.type === 'error' && (
+              <button className="modal-btn-secondary" onClick={closeModal}>
+                Try Again
+              </button>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

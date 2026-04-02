@@ -38,6 +38,62 @@ import PaganiUtopia from "../assets/PaganiUtopia.jpg";
 import FerrariSF90Stradale from "../assets/FerrariSF90Stradale.jpg";
 import XDiavelV4 from "../assets/XDiavelV4.png";
 import JeepRecon from "../assets/JeepRecon.jpg";
+import LexusLx700h from "../assets/Lexus-LX700h-2026.jpg";
+import LexusES300h from "../assets/Lexus-ES300h-2026.jpg";
+import LexusRZ450e from "../assets/Lexus-RZ450e-2026.jpg";
+import BMWiX7 from "../assets/BMW-iX7-2026.jpg";
+import BMWM5CS from "../assets/BMW-M5-CS-2026.jpg";
+import MercedesEQSMaybach from "../assets/Mercedes-EQS-Maybach-2026.jpg";
+import MercedesAMG_GT from "../assets/Mercedes-AMG-GT-2026.jpg";
+import AudiA8L from "../assets/Audi-A8L-2026.jpg";
+import AudiQ9 from "../assets/Audi-Q9-2026.jpg";
+import PorscheCayenneTurboGT from "../assets/Porsche-Cayenne-Turbo-GT-2026.jpg";
+import Porsche718CaymanEV from "../assets/Porsche-718-Cayman-EV-2026.jpg";
+import FordF150Lightning from "../assets/Ford-F150-Lightning-2026.jpg";
+import FordMustangDarkHorse from "../assets/Ford-Mustang-Dark-Horse-2026.jpg";
+import ChevroletSilveradoEV from "../assets/ChevroletSilverado.jpg";
+import ChevroletCorvetteZR1 from "../assets/ChevroletCorvette.jpg";
+import TeslaRoadster from "../assets/Tesla-Roadster-2026.jpg";
+// import TeslaSemi from "../assets/Tesla-Semi-2026.jpg";
+import RivianR2S from "../assets/Rivian-R2S-2026.jpg";
+import RivianR3X from "../assets/Rivian-R3X-2026.jpg";
+import LucidGravity from "../assets/Lucid-Gravity-2026.jpg";
+import LucidAirSapphire from "../assets/Lucid-Air-Sapphire-2026.jpg";
+import HyundaiIoniq9 from "../assets/Hyundai-Ioniq9-2026.jpg";
+import KiaEV9GT from "../assets/Kia-EV9-GT-2026.jpg";
+import ToyotaLandCruiser from "../assets/Toyota-LandCruiser-2026.jpg";
+import ToyotaCamryXSE from "../assets/Toyota-Camry-XSE-2026.jpg";
+import HondaPrologue from "../assets/Honda-Prologue-2026.jpg";
+import HondaCivicTypeR from "../assets/Honda-Civic-Type-R-2026.jpg";
+import NissanAriyaNismo from "../assets/Nissan-Ariya-Nismo-2026.jpg";
+// import NissanGT_R from "../assets/Nissan-GT-R-2026.jpg";
+import MazdaCX_90 from "../assets/Mazda-CX-90-2026.jpg";
+// import MazdaMX_5 from "../assets/Mazda-MX-5-2026.jpg";
+// import SubaruWRXSTI from "../assets/Subaru-WRX-STI-2026.jpg";
+import JeepWranglerRubiconEV from "../assets/Jeep-Wrangler-Rubicon-EV-2026.jpg";
+// import GMC HummerEV from "../assets/GMC-Hummer-EV-2026.jpg";
+import CadillacCelestiq from "../assets/Cadillac-Celestiq-2026.jpg";
+import VolvoEX90 from "../assets/Volvo-EX90-2026.jpg";
+import Polestar5 from "../assets/Polestar-5-2026.jpg";
+import LandRoverDefenderOcta from "../assets/LandRover-Defender-Octa-2026.jpg";
+import AstonMartinDB12 from "../assets/AstonMartin-DB12-2026.jpg";
+import FerrariF80 from "../assets/Ferrari-F80-2026.jpg";
+import LamborghiniTemerario from "../assets/Lamborghini-Temerario-2026.jpg";
+import McLarenP1R from "../assets/McLaren-P1R-2026.jpg";
+import BugattiTourbillon from "../assets/Bugatti-Tourbillon-2026.jpg";
+import KoenigseggGemera from "../assets/Koenigsegg-Gemera-2026.jpg";
+import RollsRoyceDroptail from "../assets/RollsRoyce-Droptail-2026.jpg";
+import DucatiStreetfighterV4 from "../assets/Ducati-Streetfighter-V4-2026.jpg";
+import HarleyDavidsonRoadGlide from "../assets/HarleyDavidson-RoadGlide-2026.jpg";
+import BMWR1300GS from "../assets/BMW-R1300GS-2026.jpg";
+import KenworthT680EV from "../assets/Kenworth-T680-EV-2026.jpg";
+import FreightlinerCascadia from "../assets/Freightliner-Cascadia-2026.jpg";
+
+
+
+
+
+
 
 
 
@@ -499,6 +555,558 @@ export const carsData = [
     category: "SUVs",
     description: "An all-electric off-roader with rugged styling and advanced 4x4 capability, built for adventure."
   },
+    {
+    id: 41,
+    name: "Lexus LX 700h",
+    price: "$115,000",
+    image: LexusLx700h,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Hybrid",
+    category: "SUVs",
+    description: "Flagship luxury SUV with a powerful hybrid V6, unparalleled off-road capability, and a meticulously crafted cabin."
+  },
+  {
+    id: 42,
+    name: "Lexus ES 300h",
+    price: "$48,000",
+    image: LexusES300h,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Hybrid",
+    category: "Sedans",
+    description: "Refined executive sedan offering exceptional fuel economy, whisper-quiet ride, and the latest Lexus Safety System+."
+  },
+    {
+    id: 43,
+    name: "Lexus RZ 450e",
+    price: "$62,000",
+    image: LexusRZ450e,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Electric",
+    category: "Electric",
+    description: "All-electric luxury crossover with striking design, steer-by-wire technology, and a sustainable interior."
+  },
+    {
+    id: 44,
+    name: "BMW iX7",
+    price: "$125,000",
+    image: BMWiX7,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Electric",
+    category: "Electric",
+    description: "Fully electric full-size SUV combining BMW’s iconic luxury with a 400-mile range and advanced autonomous driving."
+  },
+  {
+    id: 45,
+    name: "BMW M5 CS",
+    price: "$142,000",
+    image: BMWM5CS,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Hybrid",
+    category: "Sedans",
+    description: "High-performance plug-in hybrid sedan with 800 hp, track-ready chassis, and carbon-fiber components."
+  },
+  
+  {
+    id: 46,
+    name: "Mercedes‑Benz EQS Maybach",
+    price: "$210,000",
+    image: MercedesEQSMaybach,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Electric",
+    category: "Luxury",
+    description: "Ultra-luxury electric sedan with a chauffeured rear cabin, executive seats, and bespoke materials."
+  },
+  {
+    id: 47,
+    name: "Mercedes‑AMG GT 63 SE Performance",
+    price: "$195,000",
+    image: MercedesAMG_GT,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Hybrid",
+    category: "Sports",
+    description: "AMG’s most powerful four-door coupe with a V8 hybrid powertrain, delivering 880 hp and F1-derived tech."
+  },
+  {
+    id: 48,
+    name: "Audi A8 L",
+    price: "$98,000",
+    image: AudiA8L,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Petrol",
+    category: "Sedans",
+    description: "Flagship luxury sedan with quattro all-wheel drive, advanced OLED lighting, and a refined V6 engine."
+  },
+  {
+    id: 49,
+    name: "Audi Q9",
+    price: "$92,000",
+    image: AudiQ9,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Petrol",
+    category: "SUVs",
+    description: "All-new three-row luxury SUV offering spaciousness, cutting-edge infotainment, and Audi’s legendary build quality."
+  },
+  {
+    id: 50,
+    name: "Porsche Cayenne Turbo GT",
+    price: "$195,000",
+    image: PorscheCayenneTurboGT,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Petrol",
+    category: "SUVs",
+    description: "The ultimate performance SUV with a 640 hp V8, active aerodynamics, and a lap-time-focused chassis."
+  },
+  {
+    id: 51,
+    name: "Porsche 718 Cayman EV",
+    price: "$88,000",
+    image: Porsche718CaymanEV,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Electric",
+    category: "Sports",
+    description: "All-electric sports car with Porsche’s signature handling, a low center of gravity, and rapid charging."
+  },
+  {
+    id: 52,
+    name: "Ford F‑150 Lightning",
+    price: "$72,000",
+    image: FordF150Lightning,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Electric",
+    category: "Trucks",
+    description: "America’s best-selling truck goes electric with bi-directional charging, a massive frunk, and 600 hp."
+  },
+  {
+    id: 53,
+    name: "Ford Mustang Dark Horse",
+    price: "$67,000",
+    image: FordMustangDarkHorse,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Petrol",
+    category: "Sports",
+    description: "Track-focused Mustang with a 500 hp V8, MagneRide suspension, and exclusive aerodynamics."
+  },
+  {
+    id: 54,
+    name: "Chevrolet Silverado EV",
+    price: "$79,000",
+    image: ChevroletSilveradoEV,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Electric",
+    category: "Trucks",
+    description: "Full-size electric pickup with a 450-mile range, multi‑flex midgate, and 10,000 lb towing capacity."
+  },
+  {
+    id: 55,
+    name: "Chevrolet Corvette ZR1",
+    price: "$175,000",
+    image: ChevroletCorvetteZR1,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Petrol",
+    category: "Sports",
+    description: "The most powerful Corvette ever, featuring a twin-turbo V8 producing over 1000 hp and a carbon-fiber aero kit."
+  },
+  {
+    id: 56,
+    name: "Tesla Roadster",
+    price: "$250,000",
+    image: TeslaRoadster,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Electric",
+    category: "Sports",
+    description: "Next‑gen electric hypercar with 0‑60 mph in under 1.9 seconds, SpaceX cold‑gas thrusters, and a 600+ mile range."
+  },
+  // {
+  //   id: 57,
+  //   name: "Tesla Semi",
+  //   price: "$180,000",
+  //   image: TeslaSemi,
+  //   year: 2026,
+  //   mileage: "0 miles",
+  //   fuel: "Electric",
+  //   category: "Commercial",
+  //   description: "Class 8 electric semi‑truck with a 500‑mile range, ultra‑low operating costs, and tri‑motor powertrain."
+  // },
+  {
+    id: 58,
+    name: "Rivian R2S",
+    price: "$55,000",
+    image: RivianR2S,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Electric",
+    category: "SUVs",
+    description: "Compact electric SUV offering off‑road capability, a removable roof, and a focus on adventure."
+  },
+  {
+    id: 59,
+    name: "Rivian R3X",
+    price: "$48,000",
+    image: RivianR3X,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Electric",
+    category: "Hatchbacks",
+    description: "Sporty, compact electric crossover with a performance‑tuned chassis and a rugged aesthetic."
+  },
+  {
+    id: 60,
+    name: "Lucid Gravity",
+    price: "$95,000",
+    image: LucidGravity,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Electric",
+    category: "SUVs",
+    description: "Luxury electric SUV with class‑leading range, 1,200 hp, and a versatile three‑row interior."
+  },
+  {
+    id: 61,
+    name: "Lucid Air Sapphire",
+    price: "$249,000",
+    image: LucidAirSapphire,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Electric",
+    category: "Sedans",
+    description: "Tri‑motor electric sedan with over 1,200 hp, a sub‑2‑second 0‑60 time, and track‑ready cooling."
+  },
+  {
+    id: 62,
+    name: "Hyundai Ioniq 9",
+    price: "$61,000",
+    image: HyundaiIoniq9,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Electric",
+    category: "Electric",
+    description: "Three‑row electric SUV built on E‑GMP platform, offering 400‑mile range and ultra‑fast charging."
+  },
+  {
+    id: 63,
+    name: "Kia EV9 GT",
+    price: "$78,000",
+    image: KiaEV9GT,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Electric",
+    category: "Electric",
+    description: "Performance‑oriented version of the EV9 with 600 hp, adaptive suspension, and a sporty design."
+  },
+  {
+    id: 64,
+    name: "Toyota Land Cruiser",
+    price: "$85,000",
+    image: ToyotaLandCruiser,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Hybrid",
+    category: "SUVs",
+    description: "Legendary off‑roader returns with a hybrid powertrain, advanced traction systems, and modern luxury."
+  },
+  {
+    id: 65,
+    name: "Toyota Camry XSE",
+    price: "$38,000",
+    image: ToyotaCamryXSE,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Hybrid",
+    category: "Sedans",
+    description: "Sporty midsize sedan with a 225 hp hybrid powertrain, sharp styling, and Toyota’s latest infotainment."
+  },
+  {
+    id: 66,
+    name: "Honda Prologue",
+    price: "$52,000",
+    image: HondaPrologue,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Electric",
+    category: "Electric",
+    description: "All‑electric SUV designed for the North American market, with spacious interior and Google built‑in."
+  },
+  {
+    id: 67,
+    name: "Honda Civic Type R",
+    price: "$47,000",
+    image: HondaCivicTypeR,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Petrol",
+    category: "Sports",
+    description: "The ultimate front‑wheel‑drive performance hatchback, now with a more refined chassis and 350 hp."
+  },
+  {
+    id: 68,
+    name: "Nissan Ariya Nismo",
+    price: "$65,000",
+    image: NissanAriyaNismo,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Electric",
+    category: "Electric",
+    description: "Nismo‑tuned electric crossover with performance‑oriented suspension, exterior aero, and increased power."
+  },
+  // {
+  //   id: 69,
+  //   name: "Nissan GT‑R",
+  //   price: "$135,000",
+  //   image: NissanGT_R,
+  //   year: 2026,
+  //   mileage: "0 miles",
+  //   fuel: "Petrol",
+  //   category: "Sports",
+  //   description: "The iconic Godzilla returns with a hybrid‑assisted V6, updated aerodynamics, and track‑tuned AWD."
+  // },
+  {
+    id: 70,
+    name: "Mazda CX‑90",
+    price: "$52,000",
+    image: MazdaCX_90,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Petrol",
+    category: "SUVs",
+    description: "Three‑row SUV with rear‑biased all‑wheel drive, a turbo inline‑six, and upscale interior materials."
+  },
+  // {
+  //   id: 71,
+  //   name: "Mazda MX‑5",
+  //   price: "$33,000",
+  //   image: MazdaMX_5,
+  //   year: 2026,
+  //   mileage: "0 miles",
+  //   fuel: "Petrol",
+  //   category: "Convertible",
+  //   description: "The world’s best‑selling roadster gets subtle updates, improved safety, and retains its pure driving joy."
+  // },
+  // {
+  //   id: 72,
+  //   name: "Subaru WRX STI",
+  //   price: "$49,000",
+  //   image: SubaruWRXSTI,
+  //   year: 2026,
+  //   mileage: "0 miles",
+  //   fuel: "Petrol",
+  //   category: "Sedans",
+  //   description: "Rally‑inspired sedan with a 2.4L turbo boxer, symmetrical AWD, and performance‑tuned suspension."
+  // },
+  {
+    id: 73,
+    name: "Jeep Wrangler Rubicon EV",
+    price: "$78,000",
+    image: JeepWranglerRubiconEV,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Electric",
+    category: "SUVs",
+    description: "All‑electric Wrangler with 4x4 capability, removable doors and roof, and instant torque for rock crawling."
+  },
+  // {
+  //   id: 74,
+  //   name: "GMC Hummer EV",
+  //   price: "$110,000",
+  //   image: GMC HummerEV,
+  //   year: 2026,
+  //   mileage: "0 miles",
+  //   fuel: "Electric",
+  //   category: "Trucks",
+  //   description: "Ultimate electric supertruck with 1,000 hp, CrabWalk diagonal driving, and a removable roof."
+  // },
+  {
+    id: 75,
+    name: "Cadillac Celestiq",
+    price: "$340,000",
+    image: CadillacCelestiq,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Electric",
+    category: "Luxury",
+    description: "Hand‑built, ultra‑luxury electric flagship sedan with a panoramic glass roof and bespoke interior."
+  },
+  {
+    id: 76,
+    name: "Volvo EX90",
+    price: "$85,000",
+    image: VolvoEX90,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Electric",
+    category: "SUVs",
+    description: "All‑electric flagship SUV emphasizing safety, sustainability, and a seven‑seat layout with LiDAR standard."
+  },
+  {
+    id: 77,
+    name: "Polestar 5",
+    price: "$110,000",
+    image: Polestar5,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Electric",
+    category: "Sedans",
+    description: "High‑performance electric GT sedan with 884 hp, bonded aluminum chassis, and striking design."
+  },
+  {
+    id: 78,
+    name: "Land Rover Defender Octa",
+    price: "$152,000",
+    image: LandRoverDefenderOcta,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Petrol",
+    category: "SUVs",
+    description: "Ultra‑performance Defender with a 626 hp V8, 6D Dynamics suspension, and extreme off‑road capability."
+  },
+  {
+    id: 79,
+    name: "Aston Martin DB12",
+    price: "$265,000",
+    image: AstonMartinDB12,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Petrol",
+    category: "Sports",
+    description: "Super tourer combining a 680 hp V8, exquisite craftsmanship, and the latest Aston Martin infotainment."
+  },
+  {
+    id: 80,
+    name: "Ferrari F80",
+    price: "$1,800,000",
+    image: FerrariF80,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Hybrid",
+    category: "Sports",
+    description: "Ferrari’s next‑gen hypercar with a V6 hybrid system producing 1,300 hp, active aerodynamics, and a carbon‑fiber monocoque."
+  },
+  {
+    id: 81,
+    name: "Lamborghini Temerario",
+    price: "$450,000",
+    image: LamborghiniTemerario,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Hybrid",
+    category: "Sports",
+    description: "Successor to the Huracán, featuring a twin‑turbo V8 hybrid with 900+ hp and aggressive design."
+  },
+  {
+    id: 82,
+    name: "McLaren P1R",
+    price: "$2,400,000",
+    image: McLarenP1R,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Hybrid",
+    category: "Sports",
+    description: "Track‑focused evolution of the P1, combining a 1000 hp hybrid V8 with extreme weight reduction."
+  },
+  {
+    id: 83,
+    name: "Bugatti Tourbillon",
+    price: "$4,200,000",
+    image: BugattiTourbillon,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Hybrid",
+    category: "Sports",
+    description: "Chiron successor with a naturally aspirated V16 hybrid, bespoke chassis, and watchmaker‑inspired interior."
+  },
+  {
+    id: 84,
+    name: "Koenigsegg Gemera",
+    price: "$2,000,000",
+    image: KoenigseggGemera,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Hybrid",
+    category: "Sports",
+    description: "Four‑seat megacar with a 2,300 hp hybrid powertrain, free‑valve technology, and all‑wheel drive."
+  },
+  {
+    id: 85,
+    name: "Rolls‑Royce Droptail",
+    price: "$30,000,000",
+    image: RollsRoyceDroptail,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Petrol",
+    category: "Luxury",
+    description: "Coachbuilt, open‑top masterpiece with a removable hardtop, custom interior, and the brand’s iconic V12."
+  },
+  {
+    id: 86,
+    name: "Ducati Streetfighter V4",
+    price: "$28,000",
+    image: DucatiStreetfighterV4,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Petrol",
+    category: "Bikes",
+    description: "Naked superbike with 225 hp, aerodynamics derived from MotoGP, and minimalist design."
+  },
+  {
+    id: 87,
+    name: "Harley‑Davidson Road Glide",
+    price: "$32,000",
+    image: HarleyDavidsonRoadGlide,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Petrol",
+    category: "Bikes",
+    description: "Premium touring cruiser with Milwaukee‑Eight 117 engine, advanced infotainment, and aerodynamic fairing."
+  },
+  {
+    id: 88,
+    name: "BMW R 1300 GS",
+    price: "$23,000",
+    image: BMWR1300GS,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Petrol",
+    category: "Bikes",
+    description: "Adventure motorcycle with a new boxer engine, semi‑active suspension, and integrated cornering lights."
+  },
+  {
+    id: 89,
+    name: "Kenworth T680 EV",
+    price: "$270,000",
+    image: KenworthT680EV,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Electric",
+    category: "Commercial",
+    description: "Class 8 electric tractor with 350‑mile range, 5‑minute cab charging, and quiet operation."
+  },
+  {
+    id: 90,
+    name: "Freightliner Cascadia",
+    price: "$165,000",
+    image: FreightlinerCascadia,
+    year: 2026,
+    mileage: "0 miles",
+    fuel: "Diesel",
+    category: "Commercial",
+    description: "Next‑gen long‑haul truck with autonomous capabilities, Detroit DD15 engine, and 12.5 mpg efficiency."
+  },
+
 
 ];
 
